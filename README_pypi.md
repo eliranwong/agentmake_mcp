@@ -62,9 +62,9 @@ Here is the structure of the configuration dictionary:
 
 Each dictionary placed in the settings list may have the following keys and values:
 
-* name [required/optional] - This field is mandatory unless a tool is specified. It is a string value that serves as an identifier for a MCP prompt or tool.
-* description [required/optional] - This field is also mandatory unless a tool is specified. It is a string that provides a detailed description of a MCP prompt or tool.
-* agentmake [required] - This is a required field that can be either a string or a dictionary. To add a MCP prompt, a string value should be provided. Alternatively, to add a MCP tool, a dictionary should be used.
+* `name` [required/optional]: `str` - This field is mandatory unless a tool is specified. It is a string value that serves as an identifier for a MCP prompt or tool.
+* `description` [required/optional]: `str` - This field is also mandatory unless a tool is specified. It is a string that provides a detailed description of a MCP prompt or tool.
+* `agentmake` [required]: `str` / `list[dict]` - This is a required field that can be either a string or a dictionary. To add a MCP prompt, a string value should be provided. Alternatively, to add a MCP tool, a dictionary should be used.
 
 Setting up an MCP Prompt
 ~~~~~~~~~~~~~~~~~~~~~~~~
