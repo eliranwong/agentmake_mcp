@@ -31,6 +31,7 @@ Getting Started
 
 *   Python 3.8+
 *   Familiarity with the agentic components supported by `AgentMake AI <https://github.com/eliranwong/agentmake>`_.
+*   Configure AI backends for `AgentMake AI`, read https://github.com/eliranwong/agentmake#ai-backends-configurations
 
 `agentmake_mcp` automatically includes the `agentmake` library.
 
