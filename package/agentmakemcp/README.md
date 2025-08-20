@@ -1,6 +1,8 @@
-# AgentMake MCP: Your Gateway to Multi-Agent AI Systems
+=========================================================
+AgentMake MCP: Your Gateway to Multi-Agent AI Systems
+=========================================================
 
-**agentmake_mcp** offers the simplest way to set up Modal Context Protocol (MCP) servers, powering them with the versatile agentic components from the **[AgentMake AI](https://github.com/eliranwong/agentmake)** framework. This project provides the essential tools and infrastructure to create sophisticated multi-agent systems that can tackle complex tasks through collaboration and dynamic task allocation.
+**agentmake_mcp** offers the simplest way to set up Modal Context Protocol (MCP) servers, powering them with the versatile agentic components from the `AgentMake AI <https://github.com/eliranwong/agentmake>`_ framework. This project provides the essential tools and infrastructure to create sophisticated multi-agent systems that can tackle complex tasks through collaboration and dynamic task allocation.
 
 While **AgentMake AI** provides the core building blocks for creating individual AI agents, **agentmake_mcp** enables you to assemble and orchestrate them. Think of **AgentMake AI** as the factory for creating your specialized AI workers, and **agentmake_mcp** as the central command center where you manage your teams of agents on large-scale projects.
 
@@ -11,7 +13,8 @@ With AgentMake MCP, you can:
 *   **Build Complex Workflows:** Design intricate workflows where agents delegate tasks, share information, and work in parallel to solve problems more efficiently.
 *   **Host Your Own MCP Server:** Easily deploy a dedicated server for your multi-agent systems, allowing for robust integration with your applications and services.
 
-## Key Features
+Key Features
+============
 
 *   **Easy Server Setup:** Quickly deploy a fully functional MCP server with minimal configuration.
 *   **Seamless AgentMake AI Integration:** Leverage the full power of AgentMake AI's 16+ AI backends and 7 agentic components.
@@ -20,27 +23,32 @@ With AgentMake MCP, you can:
 *   **Scalable and Extensible:** Designed to support a growing number of agents and complex workflows.
 *   **Developer-Friendly:** A clean and intuitive API for defining and managing your multi-agent systems.
 
-## Getting Started
+Getting Started
+===============
 
-### 1. Prerequisites
+1. Prerequisites
+----------------
 
 *   Python 3.8+
-*   Familiarity with the agentic components supported by [AgentMake AI](https://github.com/eliranwong/agentmake).
+*   Familiarity with the agentic components supported by `AgentMake AI <https://github.com/eliranwong/agentmake>`_.
 
 `agentmake_mcp` automatically includes the `agentmake` library.
 
-### 2. Installation
+2. Installation
+---------------
 
-```bash
-pip install --upgrade agentmake_mcp
-```
+.. code-block:: bash
+
+    pip install --upgrade agentmake_mcp
 
 To include support for Google's Vertex AI, install with the `[genai]` extra:
-```bash
-pip install --upgrade agentmake_mcp[genai]
-```
 
-### 3. Create a Configuration File
+.. code-block:: bash
+
+    pip install --upgrade agentmake_mcp[genai]
+
+3. Create a Configuration File
+------------------------------
 
 Create a Python file (e.g., `my_mcp_server.py`) and define a dictionary that configures your server. This dictionary can be named anything, as the server will automatically discover it.
 
@@ -57,62 +65,79 @@ Each dictionary placed in the settings list may have the following keys and valu
 * description [required/optional] - This field is also mandatory unless a tool is specified. It is a string that provides a detailed description of a MCP prompt or tool.
 * agentmake [required] - This is a required field that can be either a string or a dictionary. To add a MCP prompt, a string value should be provided. Alternatively, to add a MCP tool, a dictionary should be used.
 
-#### Setting up an MCP Prompt
+Setting up an MCP Prompt
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 To add an MCP prompt, provide the prompt string directly as the value for the `agentmake` key.
 
-#### Setting up an MCP Tool
+Setting up an MCP Tool
+~~~~~~~~~~~~~~~~~~~~~~
 
 To add an MCP tool, provide a dictionary for the `agentmake` key. This dictionary specifies the parameters for the `agentmake` signature function from the AgentMake AI library (excluding the `messages` parameter).
 
-*For more details on the `agentmake` function parameters, see the [AgentMake AI documentation](https://github.com/eliranwong/agentmake/blob/main/docs/README.md).*
+*For more details on the `agentmake` function parameters, see the `AgentMake AI documentation <https://github.com/eliranwong/agentmake/blob/main/docs/README.md>`_.*
 
-### 4. Running the Server
+4. Running the Server
+---------------------
 
 Run the `agentmakemcp` command from your terminal, passing your configuration file as an argument.
 
 **For examples**
 
-> agentmakemcp examples/ask_multiple_models.py
+.. code-block:: bash
 
-> agentmakemcp examples/different_persona.py
+    agentmakemcp examples/ask_multiple_models.py
 
-> agentmakemcp examples/youtube_utilities.py
+.. code-block:: bash
 
-> agentmakemcp teamwork_and_toolmate.py
+    agentmakemcp examples/different_persona.py
+
+.. code-block:: bash
+
+    agentmakemcp examples/youtube_utilities.py
+
+.. code-block:: bash
+
+    agentmakemcp teamwork_and_toolmate.py
 
 **Remarks:**
 
 *   You can run multiple AgentMake MCP servers simultaneously on different ports.
 *   You can specify different AI backends for different tools, even on the same MCP server.
 
-## More Examples
+More Examples
+=============
 
-You can find more advanced examples, such as chaining multiple agents together, in the [`/examples`](https://github.com/eliranwong/agentmake_mcp/tree/main/examples) directory.
+You can find more advanced examples, such as chaining multiple agents together, in the `/examples <https://github.com/eliranwong/agentmake_mcp/tree/main/examples>`_ directory.
 
-## Integration with Third-Party AI Tools:
+Integration with Third-Party AI Tools:
+========================================
 
 For example, to integrate `AgentMake MCP servers` with `Gemini CLI`:
 
-> agentmakemcp examples/ask_multiple_models.py
+.. code-block:: bash
+
+    agentmakemcp examples/ask_multiple_models.py
 
 Edit `.gemini/settings.json` to include the following block:
 
-```json
-{
-  // add MCP servers
-  "mcpServers": {
-    "Ask Multiple AI Models": {
-      "httpUrl": "http://127.0.0.1:8080/mcp/"
-    }
-  }
-}
-```
+.. code-block:: json
 
-## Contributing
+    {
+      // add MCP servers
+      "mcpServers": {
+        "Ask Multiple AI Models": {
+          "httpUrl": "http://127.0.0.1:8080/mcp/"
+        }
+      }
+    }
+
+Contributing
+============
 
 We welcome contributions from the community! If you have an idea for a new feature, a bug fix, or an improvement to the documentation, please open an issue or submit a pull request.
 
-## License
+License
+=======
 
-This project is licensed under the MIT License. See the [LICENSE file](https://github.com/eliranwong/agentmake_mcp/blob/main/LICENSE) for details.
+This project is licensed under the MIT License. See the `LICENSE file <https://github.com/eliranwong/agentmake_mcp/blob/main/LICENSE>`_ for details.
