@@ -1,8 +1,54 @@
 # AgentMake MCP: Your Gateway to Multi-Agent AI Systems
 
+[![PyPI version](https://badge.fury.io/py/agentmakemcp.svg)](https://badge.fury.io/py/agentmakemcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 **agentmake_mcp** offers the simplest way to set up Modal Context Protocol (MCP) servers, powering them with the versatile agentic components from the **[AgentMake AI](https://github.com/eliranwong/agentmake)** framework. This project provides the essential tools and infrastructure to create sophisticated multi-agent systems that can tackle complex tasks through collaboration and dynamic task allocation.
 
 While **AgentMake AI** provides the core building blocks for creating individual AI agents, **agentmake_mcp** enables you to assemble and orchestrate them. Think of **AgentMake AI** as the factory for creating your specialized AI workers, and **agentmake_mcp** as the central command center where you manage your teams of agents on large-scale projects.
+
+## Table of Contents
+
+- [AgentMake MCP: Your Gateway to Multi-Agent AI Systems](#agentmake-mcp-your-gateway-to-multi-agent-ai-systems)
+  - [Table of Contents](#table-of-contents)
+  - [How it Works](#how-it-works)
+  - [Key Features](#key-features)
+  - [Getting Started](#getting-started)
+    - [1. Prerequisites](#1-prerequisites)
+    - [2. Installation](#2-installation)
+    - [3. Create a Configuration File](#3-create-a-configuration-file)
+    - [4. Running the Server](#4-running-the-server)
+  - [Usage](#usage)
+    - [Integrating with Third-Party AI Tools](#integrating-with-third-party-ai-tools)
+  - [Examples](#examples)
+  - [Contributing](#contributing)
+  - [License](#license)
+
+## How it Works
+
+The following diagram illustrates the relationship between `AgentMake AI`, `agentmake_mcp`, and a third-party AI tool (in this case, `Gemini CLI`):
+
+```mermaid
+graph TD
+    subgraph "Third-Party AI Tool (e.g., Gemini CLI)"
+        A[User] --> B{Gemini CLI};
+    end
+
+    subgraph "AgentMake MCP Server"
+        C[agentmakemcp] --> D{MCP Server};
+    end
+
+    subgraph "AgentMake AI"
+        E[agentmake] --> F[AI Backends];
+    end
+
+    B -->|MCP Request| D;
+    D -->|AgentMake Request| E;
+    E -->|API Request| F;
+    F -->|API Response| E;
+    E -->|AgentMake Response| D;
+    D -->|MCP Response| B;
+```
 
 With AgentMake MCP, you can:
 
@@ -43,7 +89,7 @@ pip install --upgrade agentmake_mcp[genai]
 
 ### 3. Create a Configuration File
 
-Create a Python file (e.g., `my_mcp_server.py`) and define a dictionary that configures your server. This dictionary can be named anything, as the server will automatically discover it.
+Create a Python file (e.g., `examples/ask_multiple_models.py`) and define a dictionary that configures your server. 
 
 Here is the structure of the configuration dictionary:
 
@@ -68,36 +114,38 @@ To add an MCP tool, provide a dictionary for the `agentmake` key. This dictionar
 
 *For more details on the `agentmake` function parameters, see the [AgentMake AI documentation](https://github.com/eliranwong/agentmake/blob/main/docs/README.md).*
 
+#### Full Configuration Examples
+
+Full configuration examples can be found in https://github.com/eliranwong/agentmake_mcp/tree/main/examples
+
 ### 4. Running the Server
 
 Run the `agentmakemcp` command from your terminal, passing your configuration file as an argument.
 
-**For examples**
-
-> agentmakemcp examples/ask_multiple_models.py
-
-> agentmakemcp examples/different_persona.py
-
-> agentmakemcp examples/youtube_utilities.py
-
-> agentmakemcp teamwork_and_toolmate.py
+```bash
+agentmakemcp examples/ask_multiple_models.py
+```
 
 **Remarks:**
 
 *   You can run multiple AgentMake MCP servers simultaneously on different ports.
 *   You can specify different AI backends for different tools, even on the same MCP server.
 
-## More Examples
+## Usage
 
-You can find more advanced examples, such as chaining multiple agents together, in the [`/examples`](https://github.com/eliranwong/agentmake_mcp/tree/main/examples) directory.
+Once your MCP server is running, you can integrate it with any third-party AI tool that supports the Modal Context Protocol.
 
-## Integration with Third-Party AI Tools:
+### Integrating with Third-Party AI Tools
 
 For example, to integrate `AgentMake MCP servers` with `Gemini CLI`:
 
-> agentmakemcp examples/ask_multiple_models.py
+First, start your MCP server, e.g. run the configuration file `ask_multiple_models.py` in the directory `examples`:
 
-Edit `.gemini/settings.json` to include the following block:
+```bash
+agentmakemcp examples/ask_multiple_models.py
+```
+
+Then, edit your `.gemini/settings.json` to include the following block:
 
 ```json
 {
@@ -108,6 +156,23 @@ Edit `.gemini/settings.json` to include the following block:
     }
   }
 }
+```
+
+Now, you can use the tools and prompts defined in your MCP server from within Gemini CLI.
+
+## Examples
+
+You can find more advanced examples in the [`/examples`](https://github.com/eliranwong/agentmake_mcp/tree/main/examples) directory.
+
+*   [ask_multiple_models.py](https://github.com/eliranwong/agentmake_mcp/blob/main/examples/ask_multiple_models.py)
+*   [different_persona.py](https://github.com/eliranwong/agentmake_mcp/blob/main/examples/different_persona.py)
+*   [teamwork_and_toolmate.py](https://github.com/eliranwong/agentmake_mcp/blob/main/examples/teamwork_and_toolmate.py)
+*   [youtube_utilities.py](https://github.com/eliranwong/agentmake_mcp/blob/main/examples/youtube_utilities.py)
+
+To run an example:
+
+```bash
+agentmakemcp examples/ask_multiple_models.py
 ```
 
 ## Contributing
