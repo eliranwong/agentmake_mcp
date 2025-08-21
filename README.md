@@ -3,9 +3,9 @@
 [![PyPI version](https://badge.fury.io/py/agentmakemcp.svg)](https://badge.fury.io/py/agentmakemcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**agentmake_mcp** offers the simplest way to set up Modal Context Protocol (MCP) servers, powering them with the versatile agentic components from the **[AgentMake AI](https://github.com/eliranwong/agentmake)** framework. This project provides the essential tools and infrastructure to create sophisticated multi-agent systems that can tackle complex tasks through collaboration and dynamic task allocation.
+**AgentMake MCP** offers the simplest way to set up Modal Context Protocol (MCP) servers, powering them with the versatile agentic components from the **[AgentMake AI](https://github.com/eliranwong/agentmake)** framework. This project provides the essential tools and infrastructure to create sophisticated multi-agent systems that can tackle complex tasks through collaboration and dynamic task allocation.
 
-While **AgentMake AI** provides the core building blocks for creating individual AI agents, **agentmake_mcp** enables you to assemble and orchestrate them. Think of **AgentMake AI** as the factory for creating your specialized AI workers, and **agentmake_mcp** as the central command center where you manage your teams of agents on large-scale projects.
+While **AgentMake AI** provides the core building blocks for creating individual AI agents, **AgentMake MCP** enables you to assemble and orchestrate them. Think of **AgentMake AI** as the factory for creating your specialized AI workers, and **AgentMake MCP** as the central command center where you manage your teams of agents on large-scale projects.
 
 ## Table of Contents
 
@@ -26,7 +26,7 @@ While **AgentMake AI** provides the core building blocks for creating individual
 
 ## How it Works
 
-The following diagram illustrates the relationship between `AgentMake AI`, `agentmake_mcp`, and a third-party AI tool (in this case, `Gemini CLI`):
+The following diagram illustrates the relationship between `AgentMake AI`, `AgentMake MCP`, and a third-party AI tool (in this case, `Gemini CLI`):
 
 ```mermaid
 graph TD
@@ -74,17 +74,17 @@ With AgentMake MCP, you can:
 *   Familiarity with the agentic components supported by [AgentMake AI](https://github.com/eliranwong/agentmake).
 *   Configure AI backends for `AgentMake AI`, read https://github.com/eliranwong/agentmake#ai-backends-configurations
 
-`agentmake_mcp` automatically includes the `agentmake` library.
+Package `agentmakemcp` automatically includes the `agentmake` library.
 
 ### 2. Installation
 
 ```bash
-pip install --upgrade agentmake_mcp
+pip install --upgrade agentmakemcp
 ```
 
 To include support for Google's Vertex AI, install with the `[genai]` extra:
 ```bash
-pip install --upgrade agentmake_mcp[genai]
+pip install --upgrade agentmakemcp[genai]
 ```
 
 ### 3. Create a Configuration File
