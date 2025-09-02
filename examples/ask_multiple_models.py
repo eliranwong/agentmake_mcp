@@ -5,7 +5,7 @@
     "settings": [
         # add four mcp tools
         {
-            "name": "ask_gpt",
+            "name": "ask_chatgpt",
             "description": "Ask ChatGPT",
             "agentmake": {"backend": "azure", "model": "gpt-5-chat"},
         },
@@ -31,7 +31,7 @@
             "agentmake": """You are a moderator in a collaborative discussion. Your goal is to pass the original request to different AI models for reviews and summarize the results.
     
 Please perform the following steps in order:
-1. Call the tool `ask_gpt` to answer the request.
+1. Call the tool `ask_chatgpt` to answer the request.
 2. Call the tool `ask_grok` to answer the request.
 3. Call the tool `ask_claude` to answer the request.
 4. Call the tool `ask_gemini` to answer the request.

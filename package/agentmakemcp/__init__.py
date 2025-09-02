@@ -52,9 +52,10 @@ def compileServerScripts(configs: dict) -> str:
 
             if isinstance(am, str): # add a mcp prompt
                 # add to server script
-                script = f"""@mcp.tool
+                script = f"""@mcp.prompt
 def {i["name"].replace(" ", "_").lower()}(request:str) -> PromptMessage:
     \"\"\"{i["description"]}\"\"\"
+    global logger
     logger.info(f"[Request] {ob}request{cb}")
     prompt_text = \"\"\"{am}
 
@@ -107,6 +108,7 @@ Args [optional]:
                 script = f"""@mcp.tool
 def {i["name"].replace(" ", "_").lower()}(request:str) -> str:
     \"\"\"{i["description"]}\"\"\"
+    global logger, agentmake, getResponse
     logger.info(f"[Request] {ob}request{cb}")
     messages = agentmake(request, **{am})
     return getResponse(messages)"""
