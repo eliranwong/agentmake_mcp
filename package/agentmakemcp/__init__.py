@@ -55,9 +55,9 @@ def compileServerScripts(configs: dict) -> str:
                 script = f"""@mcp.prompt
 def {i["name"].replace(" ", "_").lower()}(request:str) -> PromptMessage:
     \"\"\"{i["description"]}\"\"\"
-    global logger
+    global logger, PromptMessage, TextContent
     logger.info(f"[Request] {ob}request{cb}")
-    prompt_text = \"\"\"{am}
+    prompt_text = f\"\"\"{am}
 
 # Here is the request:
 ---
@@ -115,7 +115,7 @@ def {i["name"].replace(" ", "_").lower()}(request:str) -> str:
                 scripts.append(script)
 
     mcp_server_script = f"""from fastmcp import FastMCP
-from fastmcp.prompts.prompt import Message, PromptMessage, TextContent
+from fastmcp.prompts.prompt import PromptMessage, TextContent
 from agentmake import agentmake
 import logging, os
 
