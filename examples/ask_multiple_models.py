@@ -12,7 +12,7 @@
         {
             "name": "ask_grok",
             "description": "Ask Grok",
-            "agentmake": {"backend": "grok", "model": "grok-3"},
+            "agentmake": {"backend": "xai", "model": "grok-3"},
         },
         {
             "name": "ask_claude",
@@ -22,7 +22,7 @@
         {
             "name": "ask_gemini",
             "description": "Ask Gemini",
-            "agentmake": {"backend": "genai", "model": "gemini-2.5-pro"},
+            "agentmake": {"backend": "googleai", "model": "gemini-2.5-pro"},
         },
         # add a mcp prompt
         {
