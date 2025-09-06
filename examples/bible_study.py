@@ -34,7 +34,7 @@
         {
             "name": "read_bible_commentary",
             "description": "read bible commentary; bible verse reference(s) must be given",
-            "agentmake": {"tool": "uba/comment"},
+            "agentmake": {"tool": "uba/ai_comment"},
         },
         {
             "name": "retrieve_chinese_bible_verses",
