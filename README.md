@@ -116,7 +116,7 @@ To add an MCP tool, provide a dictionary for the `agentmake` key. This dictionar
 
 #### Full Configuration Examples
 
-Full configuration examples can be found in https://github.com/eliranwong/agentmake_mcp/tree/main/examples
+Full configuration examples can be found in https://github.com/eliranwong/agentmakemcp/tree/main/examples
 
 ### 4. Running the Server
 
@@ -162,12 +162,12 @@ Now, you can use the tools and prompts defined in your MCP server from within Ge
 
 ## Examples
 
-You can find more advanced examples in the [`/examples`](https://github.com/eliranwong/agentmake_mcp/tree/main/examples) directory.
+You can find more advanced examples in the [`/examples`](https://github.com/eliranwong/agentmakemcp/tree/main/examples) directory.
 
-*   [ask_multiple_models.py](https://github.com/eliranwong/agentmake_mcp/blob/main/examples/ask_multiple_models.py)
-*   [different_persona.py](https://github.com/eliranwong/agentmake_mcp/blob/main/examples/different_persona.py)
-*   [teamwork_and_toolmate.py](https://github.com/eliranwong/agentmake_mcp/blob/main/examples/teamwork_and_toolmate.py)
-*   [youtube_utilities.py](https://github.com/eliranwong/agentmake_mcp/blob/main/examples/youtube_utilities.py)
+*   [ask_multiple_models.py](https://github.com/eliranwong/agentmakemcp/blob/main/examples/ask_multiple_models.py)
+*   [different_persona.py](https://github.com/eliranwong/agentmakemcp/blob/main/examples/different_persona.py)
+*   [teamwork_and_toolmate.py](https://github.com/eliranwong/agentmakemcp/blob/main/examples/teamwork_and_toolmate.py)
+*   [youtube_utilities.py](https://github.com/eliranwong/agentmakemcp/blob/main/examples/youtube_utilities.py)
 
 To run an example:
 
@@ -181,4 +181,4 @@ We welcome contributions from the community! If you have an idea for a new featu
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE file](https://github.com/eliranwong/agentmake_mcp/blob/main/LICENSE) for details.
+This project is licensed under the MIT License. See the [LICENSE file](https://github.com/eliranwong/agentmakemcp/blob/main/LICENSE) for details.

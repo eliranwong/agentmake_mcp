@@ -9,17 +9,17 @@
         {
             "name": "compare_bible_translations",
             "description": "compare Bible translations; bible verse reference(s) must be given",
-            "agentmake": {"tool": "uba/compare"},
+            "agentmake": {"input_content_plugin": "uba/every_single_ref", "tool": "uba/compare"},
         },
         {
             "name": "retrieve_bible_study_indexes",
             "description": "retrieve smart indexes on studying a particular bible verse; bible verse reference must be given",
-            "agentmake": {"tool": "uba/index"},
+            "agentmake": {"input_content_plugin": "uba/every_single_ref", "tool": "uba/index"},
         },
         {
             "name": "retrieve_bible_cross_references",
             "description": "retrieve cross-references of Bible verses; bible verse reference(s) must be given",
-            "agentmake": {"tool": "uba/xref"},
+            "agentmake": {"input_content_plugin": "uba/every_single_ref", "tool": "uba/xref"},
         },
         {
             "name": "retrieve_english_bible_verses",

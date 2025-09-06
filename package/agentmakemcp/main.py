@@ -19,7 +19,7 @@ def main():
             if isinstance(configs, dict):
                 exec(compileServerScripts(configs))
             else:
-                print("Error! Invalid config file! Read instructions at: https://github.com/eliranwong/agentmake_mcp")
+                print("Error! Invalid config file! Read instructions at: https://github.com/eliranwong/agentmakemcp")
                 exit(1)
     else:
         print(f"Error! File `{filepath}` does not exist!")

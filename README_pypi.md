@@ -109,7 +109,7 @@ Run the `agentmakemcp` command from your terminal, passing your configuration fi
 More Examples
 =============
 
-You can find more advanced examples, such as chaining multiple agents together, in the `/examples <https://github.com/eliranwong/agentmake_mcp/tree/main/examples>`_ directory.
+You can find more advanced examples, such as chaining multiple agents together, in the `/examples <https://github.com/eliranwong/agentmakemcp/tree/main/examples>`_ directory.
 
 Integration with Third-Party AI Tools:
 ========================================
@@ -141,4 +141,4 @@ We welcome contributions from the community! If you have an idea for a new featu
 License
 =======
 
-This project is licensed under the MIT License. See the `LICENSE file <https://github.com/eliranwong/agentmake_mcp/blob/main/LICENSE>`_ for details.
+This project is licensed under the MIT License. See the `LICENSE file <https://github.com/eliranwong/agentmakemcp/blob/main/LICENSE>`_ for details.
