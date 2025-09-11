@@ -105,6 +105,8 @@ Args [optional]:
                     exit(1)
                 
                 # add to server script
+                am["print_on_terminal"] = False
+                am["word_wrap"] = False
                 script = f"""@mcp.tool
 def {i["name"].replace(" ", "_").lower()}(request:str) -> str:
     \"\"\"{i["description"]}\"\"\"
